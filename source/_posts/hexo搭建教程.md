@@ -2,10 +2,11 @@
 title: hexo搭建教程
 date: 2019-12-22 19:43:58
 tags:
+- 博客
 ---
 
-	本教程使用hexo+hexo-theme-yilia搭建个人静态博客，发布在Github Pages。
-	环境：Node.js、Git
+本教程使用hexo+hexo-theme-yilia搭建个人静态博客，发布在Github Pages。
+环境：Node.js、Git
 	
 <!--more-->
 
