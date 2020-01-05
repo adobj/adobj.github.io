@@ -151,6 +151,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos7搭建RabbitMQ记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/05/Centos7%E6%90%AD%E5%BB%BARabbitMQ%E8%AE%B0%E5%BD%95/">Centos7搭建RabbitMQ记录</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/05/Centos7%E6%90%AD%E5%BB%BARabbitMQ%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-01-05T09:26:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>闲来无事，打算学习一下大名鼎鼎的消息中间件，没想到安装过程中出现了不少问题，此处做个记录。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">消息队列</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">分布式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/05/Centos7%E6%90%AD%E5%BB%BARabbitMQ%E8%AE%B0%E5%BD%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo搭建教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -171,8 +249,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>本教程使用hexo+hexo-theme-yilia搭建个人静态博客，发布在Github Pages。
-环境：Node.js、Git</code></pre>
+        <p>本教程使用hexo+hexo-theme-yilia搭建个人静态博客，发布在Github Pages。<br>环境：Node.js、Git</p>
         
       
 
@@ -181,6 +258,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -235,19 +323,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Windows Diskpart命令详解</p>
-<p>通过win安装进入系统修复-高级-进入命令行模式。</p>
-<p>list disk - 显示磁盘列表。例如，LIST DISK。<br>list partition - 显示所选磁盘上的分区列表。例如，LIST PARTITION。<br>list volume - 显示卷列表。例如，LIST VOLUME。<br>list vdisk - 显示虚拟磁盘列表。</p>
-<p>diskpart -显示Diskpart 版本及当前计算机名称<br>select disk n -焦点设置给具有指定Windows NT磁盘号n的磁盘，n可以有list disk命令查看。<br>如果未指定磁盘号，该命令将显示当前处于焦点的磁盘。<br>select partition n -将焦点设置给指定分区。如果未指定分区，则显示当前处于焦点的分区。<br>select volume x -将焦点设置给指定卷。如果未指定卷，该命令将显示当前处于焦点的卷。<br>select vdisk file=x:\xxx.vhd -焦点设置给指定的虚拟磁盘文件。</p>
-<p>list disk</p>
-<p>列出所有挂载磁盘</p>
-<p>list par</p>
-<p>列出当前磁盘分区</p>
-<p>sel disk n</p>
-<p>选择磁盘 n是编号</p>
-<p>sel par n</p>
-<p>同理</p>
-
+        <p>本教材针对UEFI+GPT启动windows的efi分区损坏的情况下,使用原生windows启动盘进行修复。当然,也可以使用各种PE修复,此方式不在本次教程讨论范围。注意:不是丢失引导,这种情况可以使用EasyUEFI重建引导即可。<br>主要使用命令:diskpart、bcdboot<br>需要工具：装有win10镜像的U盘(<a href="https://msdn.itellyou.cn" target="_blank" rel="noopener">MSDN</a>镜像+<a href="http://rufus.ie" target="_blank" rel="noopener">Rufus</a>启动盘创建工具+8G以上U盘)</p>
+        
       
 
       
@@ -255,6 +332,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">系统</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -319,6 +407,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -363,7 +462,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 adobj
+    		&copy; 2020 adobj
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -444,6 +543,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
