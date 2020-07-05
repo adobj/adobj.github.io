@@ -6,28 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hexo搭建教程 | adobj</title>
+  <title>Centos7搭建RabbitMQ记录 | adobj</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本教程使用hexo+hexo-theme-yilia搭建个人静态博客，发布在Github Pages。环境：Node.js、Git">
+  <meta name="description" content="闲来无事，打算学习一下大名鼎鼎的消息中间件，没想到安装过程中出现了不少问题，此处做个记录。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo搭建教程">
-<meta property="og:url" content="http://yoursite.com/2019/12/22/hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:title" content="Centos7搭建RabbitMQ记录">
+<meta property="og:url" content="http://yoursite.com/posts/52fd.html">
 <meta property="og:site_name" content="adobj">
-<meta property="og:description" content="本教程使用hexo+hexo-theme-yilia搭建个人静态博客，发布在Github Pages。环境：Node.js、Git">
-<meta property="og:image" content="http://yoursite.com/images/hexo/NodeDownloads.png">
-<meta property="og:image" content="http://yoursite.com/images/hexo/NodeConfig.png">
-<meta property="og:image" content="http://yoursite.com/images/hexo/config_2.png">
-<meta property="og:image" content="http://yoursite.com/images/hexo/config_3.png">
-<meta property="og:image" content="http://yoursite.com/images/hexo/config_4.png">
-<meta property="og:image" content="http://yoursite.com/images/hexo/config_5.png">
-<meta property="og:image" content="http://yoursite.com/images/hexo/config_6.png">
-<meta property="og:image" content="http://yoursite.com/images/hexo/config_7.png">
-<meta property="article:published_time" content="2019-12-22T11:43:58.000Z">
-<meta property="article:modified_time" content="2020-01-05T10:05:52.657Z">
+<meta property="og:description" content="闲来无事，打算学习一下大名鼎鼎的消息中间件，没想到安装过程中出现了不少问题，此处做个记录。">
+<meta property="og:image" content="http://yoursite.com/images/rabbitmq/erlang.jpg">
+<meta property="og:image" content="http://yoursite.com/images/rabbitmq/rabbitmq1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/rabbitmq/rabbitmq2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/rabbitmq/rabbitmq3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/rabbitmq/rabbitmq4.jpg">
+<meta property="article:published_time" content="2020-01-05T09:26:48.000Z">
+<meta property="article:modified_time" content="2020-07-05T09:34:22.652Z">
 <meta property="article:author" content="adobj">
-<meta property="article:tag" content="博客">
+<meta property="article:tag" content="消息队列">
+<meta property="article:tag" content="分布式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/hexo/NodeDownloads.png">
+<meta name="twitter:image" content="http://yoursite.com/images/rabbitmq/erlang.jpg">
   
     <link rel="alternative" href="/atom.xml" title="adobj" type="application/atom+xml">
   
@@ -163,53 +161,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo搭建教程" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Centos7搭建RabbitMQ记录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hexo搭建教程
+      Centos7搭建RabbitMQ记录
     </h1>
   
 
         
-        <a href="/2019/12/22/hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-12-22T11:43:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
+        <a href="/posts/52fd.html" class="archive-article-date">
+  	<time datetime="2020-01-05T09:26:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本教程使用hexo+hexo-theme-yilia搭建个人静态博客，发布在Github Pages。<br>环境：Node.js、Git</p>
+        <p>闲来无事，打算学习一下大名鼎鼎的消息中间件，没想到安装过程中出现了不少问题，此处做个记录。</p>
 <a id="more"></a>
 
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h4 id="安装Git客户端"><a href="#安装Git客户端" class="headerlink" title="安装Git客户端"></a>安装Git客户端</h4><h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;访问官网，根据个人环境选择相应版本，默认安装就可以了。<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官方网站</a></p>
-<p><img src="/images/hexo/NodeDownloads.png" alt="Node官方图片"></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;安装完毕后在命令行输入以下命令测试是否安装成功，正确会出现版本号。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br><span class="line">node -v</span><br></pre></td></tr></table></figure>
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><p>1) 配置npm的全局模块的存放路径及cache的路径，例如两个文件夹放在NodeJS的主目录下，便在NodeJs下建立”node_global”及”node_cache”两个文件夹，输入以下命令改变npm配置<br><img src="/images/hexo/NodeConfig.png" alt="Node官方图片"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;D:\services\node-v10.16.0-win-x64\node_global&quot;</span><br><span class="line">npm config set cache &quot;D:\services\node-v10.16.0-win-x64\node_cache&quot;</span><br></pre></td></tr></table></figure>
-<p>2) 在系统环境变量添加系统变量NODE_PATH，输入路径D:\services\node-v10.16.0-win-x64\node_global\node_modules，此后所安装的模块都会安装到该路径下。<br><img src="/images/hexo/config_2.png" alt="Node官方图片"><br>3) 在命令行输入以下命令试着安装express（注：“-g”参数指装到global目录下，即“D:\services\node-v10.16.0-win-x64\node_global\node_modules”里面。）<br><img src="/images/hexo/config_3.png" alt="Node官方图片"></p>
-<h4 id="由于国内访问官方npm源速度较慢，可能出现下载失败得问题，故此处修改为淘宝镜像源。"><a href="#由于国内访问官方npm源速度较慢，可能出现下载失败得问题，故此处修改为淘宝镜像源。" class="headerlink" title="由于国内访问官方npm源速度较慢，可能出现下载失败得问题，故此处修改为淘宝镜像源。"></a>由于国内访问官方npm源速度较慢，可能出现下载失败得问题，故此处修改为淘宝镜像源。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 设置 淘宝镜像源</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 查看 使用的 镜像源</span><br><span class="line">npm config get registry</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 安装 淘宝镜像源 </span><br><span class="line">&#x2F;&#x2F; 此步骤可省略</span><br><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;至此，所有搭建博客需要的本地环境已基本完成</p>
-<h2 id="hexo简单入门"><a href="#hexo简单入门" class="headerlink" title="hexo简单入门"></a>hexo简单入门</h2><h4 id="安装hexo及hexo-deployer-git"><a href="#安装hexo及hexo-deployer-git" class="headerlink" title="安装hexo及hexo-deployer-git"></a>安装hexo及hexo-deployer-git</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;选择合适的目录，新建文件夹并重命名为自己喜欢的名称（如：我的文件夹为：D:\project\blog\docs），博客源码将储存在此处。在该文件夹下右键鼠标，点击 Git Bash Here，输入以下 npm 命令即可安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;安装hexo</span><br><span class="line">$ npm install hexo-cli -g  </span><br><span class="line">&#x2F;&#x2F;安装hexo部署到Git仓库所依赖的插件</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h4 id="初始化hexo博客并安装设置模板"><a href="#初始化hexo博客并安装设置模板" class="headerlink" title="初始化hexo博客并安装设置模板"></a>初始化hexo博客并安装设置模板</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;初始化博客</span><br><span class="line">$ hexo init </span><br><span class="line">&#x2F;&#x2F;关闭bash，进入目录themes，右键鼠标，点击Git Bash Here，执行命令</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;litten&#x2F;hexo-theme-yilia.git themes&#x2F;yilia</span><br><span class="line">&#x2F;&#x2F;修改hexo根目录下的_config.yml </span><br><span class="line">theme: yilia</span><br></pre></td></tr></table></figure>
-
-<h4 id="本地启动博客并发布到Github-Pages"><a href="#本地启动博客并发布到Github-Pages" class="headerlink" title="本地启动博客并发布到Github Pages"></a>本地启动博客并发布到Github Pages</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;清空历史生成文件</span><br><span class="line">$ hexo clean</span><br><span class="line">&#x2F;&#x2F;生成静态页</span><br><span class="line">$ hexo generate  </span><br><span class="line">&#x2F;&#x2F;启动服务</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>博客根目录如下：<br><img src="/images/hexo/config_4.png" alt="Node官方图片"><br>themes目录如下：<br><img src="/images/hexo/config_5.png" alt="Node官方图片"><br>生成静态文件：<br><img src="/images/hexo/config_6.png" alt="Node官方图片"><br>启动服务：<br><img src="/images/hexo/config_7.png" alt="Node官方图片"><br>打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，即可看到博客已经成功在本地运行了。</p>
-<p>尚需完善模块记录</p>
-<ul>
-<li>Git客户端安装</li>
-<li>发布博客到远程仓库</li>
-<li>Github Pages配置</li>
-<li>每次发布博客后同步源码备份到dev分支设置</li>
-<li>hexo写博客基本操作(Markdown基本语法)</li>
-</ul>
-<p>版权声明：本文为博主「adobj」的原创文章，转载请附上原文出处链接及本声明。<br><a href="https://www.2766969.xyz/" target="_blank" rel="noopener">原文链接</a></p>
+<h2 id="RabbitMQ简单介绍"><a href="#RabbitMQ简单介绍" class="headerlink" title="RabbitMQ简单介绍"></a>RabbitMQ简单介绍</h2><p>RabbitMQ就是当前最主流的消息中间件之一。RabbitMQ是一个开源的AMQP实现，服务器端用Erlang语言编写，支持多种客户端，如：Python、Ruby、.NET、Java、JMS、C、PHP、ActionScript、XMPP、STOMP等，支持AJAX。用于在分布式系统中存储转发消息，在易用性、扩展性、高可用性等方面表现不俗。在目前分布式的大环境下，成为非常常用的消息队列，以下详细说明怎么在centos7 上安装部署rabbitmq。</p>
+<h2 id="安装erlang"><a href="#安装erlang" class="headerlink" title="安装erlang"></a>安装erlang</h2><p>由于rabbitmq是基于erlang语言开发的，所以必须先安装erlang。</p>
+<p>1)安装依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc glibc-devel make ncurses-devel openssl-devel xmlto perl wget gtk2-devel binutils-devel</span><br></pre></td></tr></table></figure>
+<p>2)下载安装包，<a href="https://www.erlang.org/downloads" target="_blank" rel="noopener">官方链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;erlang.org&#x2F;download&#x2F;otp_src_22.0.tar.gz</span><br></pre></td></tr></table></figure>
+<p>3)解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf otp_src_22.0.tar.gz</span><br></pre></td></tr></table></figure>
+<p>4)安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 移动到指定目录</span><br><span class="line">mv otp_src_22.0 &#x2F;usr&#x2F;local&#x2F;</span><br><span class="line"># 进入目录</span><br><span class="line">cd &#x2F;usr&#x2F;local&#x2F;otp_src_22.0&#x2F;</span><br><span class="line"># 创建安装目录</span><br><span class="line">mkdir ..&#x2F;erlang</span><br><span class="line"># 配置安装路径</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;erlang</span><br><span class="line"># 安装</span><br><span class="line">make install</span><br><span class="line"># 查看是否安装成功</span><br><span class="line">ll &#x2F;usr&#x2F;local&#x2F;erlang&#x2F;bin</span><br><span class="line"># 添加环境变量</span><br><span class="line">echo &#39;export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;erlang&#x2F;bin&#39; &gt;&gt; &#x2F;etc&#x2F;profile</span><br><span class="line"># 刷新环境变量</span><br><span class="line">source &#x2F;etc&#x2F;profile</span><br><span class="line"># 查看配置是否成功</span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
+<p>成功安装<br><img src="/images/rabbitmq/erlang.jpg" alt="erlang"></p>
+<h2 id="安装RabbitMQ"><a href="#安装RabbitMQ" class="headerlink" title="安装RabbitMQ"></a>安装RabbitMQ</h2><p>下载安装包，<a href="https://github.com/rabbitmq/rabbitmq-server/tags" target="_blank" rel="noopener">官方下载链接</a></p>
+<p>此处为重中之重，一定要选择erlang对应版本的mq，我就是在此处掉坑，导致后边怎么折腾都无法启动mq。版本对应关系可以参考官网，此处给出<a href="https://www.rabbitmq.com/which-erlang.html" target="_blank" rel="noopener">链接</a>。<br><img src="/images/rabbitmq/rabbitmq1.jpg" alt="rabbitmq"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 下载</span><br><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;rabbitmq&#x2F;rabbitmq-server&#x2F;archive&#x2F;v3.8.0.tar.gz</span><br><span class="line"># 解压</span><br><span class="line">tar -zxvf rabbitmq-server-3.8.0.tar.gz</span><br><span class="line"># 移动</span><br><span class="line">mv rabbitmq-server-3.8.0&#x2F; &#x2F;usr&#x2F;local&#x2F;</span><br><span class="line"># 配置环境变量</span><br><span class="line">echo &#39;export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;rabbitmq-server-3.8.0&#x2F;sbin&#39; &gt;&gt; &#x2F;etc&#x2F;profile</span><br><span class="line"># 刷新环境变量</span><br><span class="line">source &#x2F;etc&#x2F;profile</span><br><span class="line"># 创建配置目录</span><br><span class="line">mkdir &#x2F;etc&#x2F;rabbitmq</span><br></pre></td></tr></table></figure>
+<p><img src="/images/rabbitmq/rabbitmq2.jpg" alt="rabbitmq"></p>
+<h2 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 启动：</span><br><span class="line">rabbitmq-server -detached</span><br><span class="line"># 停止</span><br><span class="line">rabbitmqctl stop</span><br><span class="line"># 状态</span><br><span class="line">rabbitmqctl status</span><br><span class="line"># 开启web插件</span><br><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure>
+<p>访问：<a href="http://127.0.0.1:15672/" target="_blank" rel="noopener">http://127.0.0.1:15672/</a><br><img src="/images/rabbitmq/rabbitmq3.jpg" alt="rabbitmq"><br>默认账号密码：guest guest（这个账号只允许本机访问）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 查看所有用户</span><br><span class="line">rabbitmqctl list_users</span><br><span class="line"># 添加一个用户</span><br><span class="line">rabbitmqctl add_user adobj 123456</span><br><span class="line"># 配置权限</span><br><span class="line">rabbitmqctl set_permissions -p &quot;&#x2F;&quot; adobj &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</span><br><span class="line"># 查看用户权限</span><br><span class="line">rabbitmqctl list_user_permissions adobj</span><br><span class="line"># 删除用户（安全起见，删除默认用户）</span><br><span class="line">rabbitmqctl delete_user guest</span><br></pre></td></tr></table></figure>
+<p>配置好用户之后重启一下rabbit，然后就可以用新账号进行登陆<br><img src="/images/rabbitmq/rabbitmq4.jpg" alt="rabbitmq"></p>
 
       
 
@@ -244,13 +237,28 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">消息队列</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">分布式</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/uncategorized//" class="article-tag-list-link color4">uncategorized</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -300,7 +308,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/22/hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/posts/52fd.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +322,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/05/Centos7%E6%90%AD%E5%BB%BARabbitMQ%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Centos7搭建RabbitMQ记录
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/22/%E4%BF%AE%E5%A4%8DWindows%E5%BC%95%E5%AF%BC%E5%8F%8A%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">修复Windows引导及挂载硬盘</div>
+    <a href="/posts/119b.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo搭建教程</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -451,15 +450,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">分布式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
