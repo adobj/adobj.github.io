@@ -1,8 +1,10 @@
 ---
 title: 修复Windows引导及挂载硬盘
-date: 2019-12-22 12:21:49
 tags:
-- 系统
+  - 系统
+abbrlink: 12a6
+categories: uncategorized
+date: 2019-12-22 12:21:49
 ---
 
 本教材针对UEFI+GPT启动windows的efi分区损坏的情况下,使用原生windows启动盘进行修复。当然,也可以使用各种PE修复,此方式不在本次教程讨论范围。注意:不是丢失引导,这种情况可以使用EasyUEFI重建引导即可。

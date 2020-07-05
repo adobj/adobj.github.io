@@ -1,9 +1,11 @@
 ---
 title: Centos7搭建RabbitMQ记录
-date: 2020-01-05 17:26:48
 tags:
-- 消息队列
-- 分布式
+  - 消息队列
+  - 分布式
+abbrlink: 52fd
+categories: uncategorized
+date: 2020-01-05 17:26:48
 ---
 
 闲来无事，打算学习一下大名鼎鼎的消息中间件，没想到安装过程中出现了不少问题，此处做个记录。
