@@ -7,9 +7,9 @@ menu:
 # SubNav
 subnav:
   github: "https://github.com/adobj"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  #weibo: "#"
+  #rss: "#"
+  #zhihu: "#"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -17,10 +17,10 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
-  #facebook: "#"
+  mail: "mailto:fankevin9527@gmail.com"
+  facebook: "#"
   #google: "#"
-  #twitter: "#"
+  twitter: "https://twitter.com/fankevin9527"
   #linkedin: "#"
 
 rss: /atom.xml
@@ -65,7 +65,7 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: /favicon.png
+favicon: /favicon.ico
 
 #你的头像url
 avatar: /assets/img/person_avatar.jpg
